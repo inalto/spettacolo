@@ -27,10 +27,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contract.fields.name') }}
+                            {{ trans('cruds.contract.fields.title') }}
                         </th>
                         <td>
-                            {{ $contract->name }}
+                            {{ $contract->title }}
                         </td>
                     </tr>
                     <tr>
@@ -73,14 +73,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contract.fields.title') }}
-                        </th>
-                        <td>
-                            {{ $contract->title }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.contract.fields.date') }}
                         </th>
                         <td>
@@ -89,10 +81,28 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.contract.fields.name') }}
+                        </th>
+                        <td>
+                            {{ $contract->name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.contract.fields.price') }}
                         </th>
                         <td>
                             {{ $contract->price }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.contract.fields.template') }}
+                        </th>
+                        <td>
+                            @if($contract->Template)
+                                <span class="badge badge-relationship">{{ $contract->Template->name ?? '' }}</span>
+                            @endif
                         </td>
                     </tr>
                 </tbody>

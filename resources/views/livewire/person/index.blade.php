@@ -46,35 +46,8 @@
                             @include('components.table.sort', ['field' => 'last_name'])
                         </th>
                         <th>
-                            {{ trans('cruds.person.fields.qualita') }}
-                            @include('components.table.sort', ['field' => 'qualita'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.person.fields.ref') }}
-                            @include('components.table.sort', ['field' => 'ref'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.person.fields.address') }}
-                            @include('components.table.sort', ['field' => 'address'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.person.fields.cap') }}
-                            @include('components.table.sort', ['field' => 'cap'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.person.fields.city') }}
-                            @include('components.table.sort', ['field' => 'city'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.person.fields.cf') }}
-                            @include('components.table.sort', ['field' => 'cf'])
-                        </th>
-                        <th>
                             {{ trans('cruds.person.fields.piva') }}
                             @include('components.table.sort', ['field' => 'piva'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.person.fields.contract') }}
                         </th>
                         <th>
                         </th>
@@ -96,30 +69,7 @@
                                 {{ $person->last_name }}
                             </td>
                             <td>
-                                {{ $person->qualita_label }}
-                            </td>
-                            <td>
-                                {{ $person->ref }}
-                            </td>
-                            <td>
-                                {{ $person->address }}
-                            </td>
-                            <td>
-                                {{ $person->cap }}
-                            </td>
-                            <td>
-                                {{ $person->city }}
-                            </td>
-                            <td>
-                                {{ $person->cf }}
-                            </td>
-                            <td>
                                 {{ $person->piva }}
-                            </td>
-                            <td>
-                                @foreach($person->contract as $key => $entry)
-                                    <span class="badge badge-relationship">{{ $entry->name }}</span>
-                                @endforeach
                             </td>
                             <td>
                                 <div class="flex justify-end">

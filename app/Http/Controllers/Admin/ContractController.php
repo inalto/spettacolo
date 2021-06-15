@@ -35,6 +35,8 @@ class ContractController extends Controller
     {
         abort_if(Gate::denies('contract_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        $contract->load('template');
+
         return view('admin.contract.show', compact('contract'));
     }
 
