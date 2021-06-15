@@ -38,31 +38,16 @@
                             @include('components.table.sort', ['field' => 'id'])
                         </th>
                         <th>
-                            {{ trans('cruds.contract.fields.name') }}
-                            @include('components.table.sort', ['field' => 'name'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.contract.fields.attachment') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.contract.fields.location') }}
-                            @include('components.table.sort', ['field' => 'location'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.contract.fields.cup') }}
-                            @include('components.table.sort', ['field' => 'cup'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.contract.fields.cig') }}
-                            @include('components.table.sort', ['field' => 'cig'])
-                        </th>
-                        <th>
                             {{ trans('cruds.contract.fields.title') }}
                             @include('components.table.sort', ['field' => 'title'])
                         </th>
                         <th>
                             {{ trans('cruds.contract.fields.date') }}
                             @include('components.table.sort', ['field' => 'date'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.contract.fields.name') }}
+                            @include('components.table.sort', ['field' => 'name'])
                         </th>
                         <th>
                             {{ trans('cruds.contract.fields.price') }}
@@ -82,31 +67,13 @@
                                 {{ $contract->id }}
                             </td>
                             <td>
-                                {{ $contract->name }}
-                            </td>
-                            <td>
-                                @foreach($contract->attachment as $key => $entry)
-                                    <a class="link-light-blue" href="{{ $entry['url'] }}">
-                                        <i class="far fa-file">
-                                        </i>
-                                        {{ $entry['file_name'] }}
-                                    </a>
-                                @endforeach
-                            </td>
-                            <td>
-                                {{ $contract->location }}
-                            </td>
-                            <td>
-                                {{ $contract->cup }}
-                            </td>
-                            <td>
-                                {{ $contract->cig }}
-                            </td>
-                            <td>
                                 {{ $contract->title }}
                             </td>
                             <td>
                                 {{ $contract->date }}
+                            </td>
+                            <td>
+                                {{ $contract->name }}
                             </td>
                             <td>
                                 {{ $contract->price }}

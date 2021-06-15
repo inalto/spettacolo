@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Contract;
 
 use App\Models\Contract;
+use App\Models\Template;
 use Livewire\Component;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
@@ -12,11 +13,14 @@ class Edit extends Component
 
     public array $mediaToRemove = [];
 
+    public array $listsForFields = [];
+
     public array $mediaCollections = [];
 
     public function mount(Contract $contract)
     {
-        $this->contract         = $contract;
+        $this->contract = $contract;
+        $this->initListsForFields();
         $this->mediaCollections = [
             'contract_attachment' => $contract->attachment,
         ];
@@ -59,7 +63,7 @@ class Edit extends Component
     protected function rules(): array
     {
         return [
-            'contract.name' => [
+            'contract.title' => [
                 'string',
                 'nullable',
             ],
@@ -83,19 +87,29 @@ class Edit extends Component
                 'string',
                 'nullable',
             ],
-            'contract.title' => [
-                'string',
-                'nullable',
-            ],
             'contract.date' => [
                 'nullable',
                 'date_format:' . config('project.datetime_format'),
+            ],
+            'contract.name' => [
+                'string',
+                'nullable',
             ],
             'contract.price' => [
                 'numeric',
                 'nullable',
             ],
+            'contract.template_id' => [
+                'integer',
+                'exists:templates,id',
+                'nullable',
+            ],
         ];
+    }
+
+    protected function initListsForFields(): void
+    {
+        $this->listsForFields['template'] = Template::pluck('name', 'id')->toArray();
     }
 
     protected function syncMedia(): void

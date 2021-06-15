@@ -1,13 +1,13 @@
 <form wire:submit.prevent="submit" class="pt-3">
 
-    <div class="form-group {{ $errors->has('contract.name') ? 'invalid' : '' }}">
-        <label class="form-label" for="name">{{ trans('cruds.contract.fields.name') }}</label>
-        <input class="form-control" type="text" name="name" id="name" wire:model.defer="contract.name">
+    <div class="form-group {{ $errors->has('contract.title') ? 'invalid' : '' }}">
+        <label class="form-label" for="title">{{ trans('cruds.contract.fields.title') }}</label>
+        <input class="form-control" type="text" name="title" id="title" wire:model.defer="contract.title">
         <div class="validation-message">
-            {{ $errors->first('contract.name') }}
+            {{ $errors->first('contract.title') }}
         </div>
         <div class="help-block">
-            {{ trans('cruds.contract.fields.name_helper') }}
+            {{ trans('cruds.contract.fields.title_helper') }}
         </div>
     </div>
     <div class="form-group {{ $errors->has('mediaCollections.contract_attachment') ? 'invalid' : '' }}">
@@ -50,16 +50,6 @@
             {{ trans('cruds.contract.fields.cig_helper') }}
         </div>
     </div>
-    <div class="form-group {{ $errors->has('contract.title') ? 'invalid' : '' }}">
-        <label class="form-label" for="title">{{ trans('cruds.contract.fields.title') }}</label>
-        <input class="form-control" type="text" name="title" id="title" wire:model.defer="contract.title">
-        <div class="validation-message">
-            {{ $errors->first('contract.title') }}
-        </div>
-        <div class="help-block">
-            {{ trans('cruds.contract.fields.title_helper') }}
-        </div>
-    </div>
     <div class="form-group {{ $errors->has('contract.date') ? 'invalid' : '' }}">
         <label class="form-label" for="date">{{ trans('cruds.contract.fields.date') }}</label>
         <x-date-picker class="form-control" wire:model="contract.date" id="date" name="date" />
@@ -70,6 +60,16 @@
             {{ trans('cruds.contract.fields.date_helper') }}
         </div>
     </div>
+    <div class="form-group {{ $errors->has('contract.name') ? 'invalid' : '' }}">
+        <label class="form-label" for="name">{{ trans('cruds.contract.fields.name') }}</label>
+        <input class="form-control" type="text" name="name" id="name" wire:model.defer="contract.name">
+        <div class="validation-message">
+            {{ $errors->first('contract.name') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.contract.fields.name_helper') }}
+        </div>
+    </div>
     <div class="form-group {{ $errors->has('contract.price') ? 'invalid' : '' }}">
         <label class="form-label" for="price">{{ trans('cruds.contract.fields.price') }}</label>
         <input class="form-control" type="number" name="price" id="price" wire:model.defer="contract.price" step="0.01">
@@ -78,6 +78,16 @@
         </div>
         <div class="help-block">
             {{ trans('cruds.contract.fields.price_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('contract.template_id') ? 'invalid' : '' }}">
+        <label class="form-label" for="template">{{ trans('cruds.contract.fields.template') }}</label>
+        <x-select-list class="form-control" id="template" name="template" :options="$this->listsForFields['template']" wire:model="contract.template_id" />
+        <div class="validation-message">
+            {{ $errors->first('contract.template_id') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.contract.fields.template_helper') }}
         </div>
     </div>
 
