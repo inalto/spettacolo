@@ -16,3 +16,16 @@
     </div>
 </div>
 @endsection
+@section('styles')
+<link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+@endsection
+@section('scripts')
+<script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
+<script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+    Laraberg.init('template') 
+});
+</script>
+@endsection

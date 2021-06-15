@@ -16,12 +16,13 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/dusk": "^6.11",
         "laravel/framework": "^8.12",
+        "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
-        "livewire/livewire": "^2.3",
         "laraveldaily/laravel-charts": "^0.1.24",
-        "laravel/sanctum": "^2.8",
-        "spatie/laravel-medialibrary": "^9.4"
+        "livewire/livewire": "^2.3",
+        "spatie/laravel-medialibrary": "^9.4",
+        "van-ons/laraberg": "^1.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
