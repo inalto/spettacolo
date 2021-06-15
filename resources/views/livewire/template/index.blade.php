@@ -22,7 +22,7 @@
             <input type="text" wire:model.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
         </div>
     </div>
-    <div wire:loading.delay class="col-12 alert alert-info">
+    <div wire:loading.delay>
         Loading...
     </div>
 

@@ -28,6 +28,7 @@ class Template extends Model
 
     protected $fillable = [
         'name',
+        'template',
     ];
 
     protected $dates = [

@@ -22,23 +22,17 @@ class Contract extends Model implements HasMedia
 
     public $orderable = [
         'id',
-        'name',
-        'location',
-        'cup',
-        'cig',
         'title',
         'date',
+        'name',
         'price',
     ];
 
     public $filterable = [
         'id',
-        'name',
-        'location',
-        'cup',
-        'cig',
         'title',
         'date',
+        'name',
         'price',
     ];
 
@@ -54,13 +48,14 @@ class Contract extends Model implements HasMedia
     ];
 
     protected $fillable = [
-        'name',
+        'title',
         'location',
         'cup',
         'cig',
-        'title',
         'date',
+        'name',
         'price',
+        'template_id',
     ];
 
     public function getAttachmentAttribute()
@@ -81,6 +76,11 @@ class Contract extends Model implements HasMedia
     public function setDateAttribute($value)
     {
         $this->attributes['date'] = $value ? Carbon::createFromFormat(config('project.datetime_format'), $value)->format('Y-m-d H:i:s') : null;
+    }
+
+    public function template()
+    {
+        return $this->belongsTo(Template::class);
     }
 
     protected function serializeDate(DateTimeInterface $date)

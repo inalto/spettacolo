@@ -35,6 +35,10 @@ class Create extends Component
                 'string',
                 'nullable',
             ],
+            'template.template' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }
