@@ -10,12 +10,12 @@ class CreateContractsTable extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();
+            $table->string('title')->nullable();
             $table->string('location')->nullable();
             $table->string('cup')->nullable();
             $table->string('cig')->nullable();
-            $table->string('title')->nullable();
             $table->datetime('date')->nullable();
+            $table->string('name')->nullable();
             $table->decimal('price', 15, 2)->nullable();
             $table->timestamps();
             $table->softDeletes();

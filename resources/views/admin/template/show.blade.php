@@ -33,6 +33,14 @@
                             {{ $template->name }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.template.fields.template') }}
+                        </th>
+                        <td>
+                            {{ $template->template }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
