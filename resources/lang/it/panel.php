@@ -1,5 +1,2 @@
 <?php
-
-return [
-    'site_title' => 'Spettacolo',
-];
+return ["site_title" => "Spettacolo"];

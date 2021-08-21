@@ -1,5 +1,6 @@
-<form wire:submit.prevent="submit" class="pt-3">
+<form wire:submit.prevent="submit" >
 
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
     <div class="form-group {{ $errors->has('person.first_name') ? 'invalid' : '' }}">
         <label class="form-label required" for="first_name">{{ trans('cruds.person.fields.first_name') }}</label>
         <input class="form-control" type="text" name="first_name" id="first_name" required wire:model.defer="person.first_name">
@@ -45,7 +46,10 @@
             {{ trans('cruds.person.fields.ref_helper') }}
         </div>
     </div>
-    <div class="form-group {{ $errors->has('person.address') ? 'invalid' : '' }}">
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+    <div class="col-span-3 form-group {{ $errors->has('person.address') ? 'invalid' : '' }}">
         <label class="form-label required" for="address">{{ trans('cruds.person.fields.address') }}</label>
         <input class="form-control" type="text" name="address" id="address" required wire:model.defer="person.address">
         <div class="validation-message">
@@ -65,6 +69,9 @@
             {{ trans('cruds.person.fields.cap_helper') }}
         </div>
     </div>
+</div>
+
+
     <div class="form-group {{ $errors->has('person.city') ? 'invalid' : '' }}">
         <label class="form-label required" for="city">{{ trans('cruds.person.fields.city') }}</label>
         <input class="form-control" type="text" name="city" id="city" required wire:model.defer="person.city">

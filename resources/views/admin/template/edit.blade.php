@@ -7,8 +7,8 @@
             <h6 class="card-title">
                 {{ trans('global.edit') }}
                 {{ trans('cruds.template.title_singular') }}:
-                {{ trans('cruds.template.fields.id') }}
-                {{ $template->id }}
+                {{-- trans('cruds.template.fields.id') --}}
+                {{-- $template->id --}}
             </h6>
         </div>
     </div>
@@ -17,4 +17,9 @@
         @livewire('template.edit', [$template])
     </div>
 </div>
+@endsection
+@section('styles')
+
+@endsection
+@section('scripts')
 @endsection
